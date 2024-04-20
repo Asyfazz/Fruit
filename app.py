@@ -14,7 +14,6 @@ MONGODB_URI = os.environ.get("MONGODB_URI")
 DB_NAME =  os.environ.get("DB_NAME")
 
 client = MongoClient(MONGODB_URI)
-
 db = client[DB_NAME]
 
 app = Flask(__name__)
@@ -82,7 +81,6 @@ def editFruit(_id):
     print(data)
     return render_template('EditFruit.html', data=data)
     
-
 @app.route('/deleteFruit/<_id>',methods=['GET','POST'])
 def deleteFruit(_id):
     id = ObjectId(_id)
